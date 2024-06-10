@@ -23,13 +23,6 @@ class BooksCreateListView(APIView):
 
 class BookDetailVieworDeleteBookView(APIView):
     """ This is a view to get a record of a book, update a book record or delete a book record using its ID. """
-
-    def get_book(self, bookID):
-        # search for a book using its ID
-        try:
-            return Book.objects.get(id=bookID)
-        except (Book.DoesNotExist, AttributeError):
-            return Response({"error": "Book not found!"}, status=status.HTTP_404_NOT_FOUND)
     
 
     def get(self, request, bookID, *args, **kwargs):
