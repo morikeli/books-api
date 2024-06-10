@@ -39,7 +39,7 @@ class BookDetailVieworDeleteBookView(APIView):
             return Response({"error": "Book not found!"}, status=status.HTTP_404_NOT_FOUND)
         
         serializer = BookSerializer(book)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 
     def put(self, request, bookID, *args, **kwargs):
