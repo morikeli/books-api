@@ -37,7 +37,7 @@ class BookDetailVieworDeleteBookView(APIView):
 
     def put(self, request, bookID, *args, **kwargs):
         try:
-            book = Book.objects.get(id=bookID)
+            book = Book.objects.get_or_create(id=bookID)
         except Book.DoesNotExist:
             return Response({"error": "Book not found!"}, status=status.HTTP_404_NOT_FOUND)
         
