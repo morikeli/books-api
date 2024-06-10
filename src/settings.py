@@ -64,7 +64,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'src.wsgi.application'
 
-AUTH_USER_MODEL = 'api.user'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -118,17 +117,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://10.0.0.2:8000",
-    "http://127.0.0.1:8000",
-    "http://192.168.180.138:8000"
-]
+CORS_ALLOWED_ORIGINS = ['*']
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 }
