@@ -11,7 +11,7 @@ class BooksCreateListView(APIView):
     def get(self, request, *args, **kwargs):
         books_qs = Book.objects.all()
         serializer = BookSerializer(books_qs, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_302_FOUND)
     
 
     def post(self, request, *args, **kwargs):
@@ -52,7 +52,7 @@ class BookDetailVieworDeleteBookView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_205_RESET_CONTENT)
         
 
     def delete(self, request, bookID):
