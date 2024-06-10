@@ -1,4 +1,11 @@
 *venv
 *env
+
+# db file
+*.sqlite3
+
+# binary files
 *__pycache__
+
+# db migrations
 *migrations
