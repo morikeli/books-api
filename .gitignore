@@ -2,7 +2,7 @@
 *env
 
 # db file
-*.sqlite3
+# *.sqlite3
 
 # binary files
 *__pycache__
