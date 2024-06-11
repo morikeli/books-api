@@ -46,7 +46,7 @@ Installation instructions
   ```
 
 2. Copy and paste the code printed on your terminal.
-3. Create a .env file and store in the code in the .env file.
+3. Create a .env file in the project's base directory and paste the code in the .env file.
   ```env
     SECRET_KEY=<paste-the-generated-code-here>
   ```
